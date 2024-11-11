@@ -1,0 +1,23 @@
+function sys=Energy_hub_configuration
+sys.factor_scale = 0.075;
+
+%       a       b      c       d       e      f      Pmin    Pmax   hmin  hmax    
+sys.Grid=[
+        0       27     0       0       0      0      0       320*sys.factor_scale     0      0];
+
+sys.day_step=96;
+sys.t_eve_day=linspace(0,23.75,96); 
+
+sys.pbs_max = 200*sys.factor_scale;
+sys.cool_cap = 70.*sys.factor_scale;
+sys.IT_cap = 143.*sys.factor_scale;
+sys.Ebs_max = 800*sys.factor_scale;
+sys.E_0_var = [sys.Ebs_max/2;sys.Ebs_max/2];
+
+sys.Tset_min = 15;
+sys.Tset_max = 24;
+sys.Tserver_max = 26;
+sys.pcool_max = 300*sys.factor_scale;
+sys.dif_T = 0.3;
+
+end
